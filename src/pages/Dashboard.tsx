@@ -5,6 +5,7 @@ import { CONTAINER_MAX_WIDTH } from '../constants/layout';
 import { SubjectsContext } from '../context';
 
 import hand from '../assets/patterns/hand.svg';
+import whiteCircle from '../assets/patterns/white-circle.svg';
 
 export const Dashboard = (): React.ReactElement => {
   const { data } = useContext(SubjectsContext);
@@ -24,6 +25,14 @@ export const Dashboard = (): React.ReactElement => {
         <SubjectGrid subjects={data?.subjects} />
         <Section />
       </Container>
+      <Image
+        alt="hand"
+        src={whiteCircle}
+        pos="fixed"
+        bottom="0"
+        right="0"
+        zIndex="1"
+      />
     </Box>
   );
 };

@@ -1,6 +1,7 @@
 import { Flex, HStack, Image, Text } from '@chakra-ui/react';
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.svg';
 import avatar from '../../assets/icons/avatar.svg';
 
@@ -16,7 +17,9 @@ export const Header = (): React.ReactElement => {
         mx="auto"
         px="1rem"
       >
-        <Image alt="logo" src={logo} />
+        <Link to="/">
+          <Image alt="logo" src={logo} />
+        </Link>
         <HStack spacing="1.2rem">
           <Image alt="avatar" src={avatar} />
           <Text color="#fff" opacity="0.4" fontSize="1.6rem">
