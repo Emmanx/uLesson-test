@@ -26,11 +26,15 @@ export const Chapters = (): React.ReactElement => {
   };
 
   return (
-    <Box w="100%" my="5.3rem">
+    <Box w="100%" mt="12.8rem" mb="5.3rem">
       <Container maxW={CONTAINER_MAX_WIDTH}>
-        <HStack pos="relative" left="-11rem" spacing="3.8rem">
+        <HStack
+          pos="relative"
+          left={{ base: '0', lg: '-11rem' }}
+          spacing={{ base: '2rem', lg: '3.8rem' }}
+        >
           <Image
-            w="7.2rem"
+            w={{ base: '4rem', lg: '7.2rem' }}
             src={arrow}
             alt="arrow back"
             onClick={handleClick}
@@ -38,7 +42,7 @@ export const Chapters = (): React.ReactElement => {
           />
           <Heading
             fontFamily="'Itim', cursive"
-            fontSize="4.8rem"
+            fontSize={{ base: '4rem', md: '4.8rem' }}
             fontWeight="400"
           >
             {subject?.name}
