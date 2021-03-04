@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import theme from './style/theme';
 import { Chapters, Dashboard } from './pages';
 import { SubjectsContextProvider } from './context';
+import { Header } from './components/layout';
 
 export const App = (): React.ReactElement => {
   const queryClient = new QueryClient();
@@ -14,6 +15,7 @@ export const App = (): React.ReactElement => {
     <QueryClientProvider client={queryClient}>
       <SubjectsContextProvider>
         <ChakraProvider theme={theme}>
+          <Header />
           <Router>
             <Switch>
               <Route exact path="/">

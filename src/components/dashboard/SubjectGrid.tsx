@@ -13,7 +13,11 @@ export const SubjectGrid = ({
 }: ISubjectGridProps): React.ReactElement => {
   return (
     <Box mt="5.2rem">
-      <Flex w="100%" wrap="wrap" justify={{ base: 'center', sm: 'flex-start' }}>
+      <Flex
+        w="100%"
+        wrap="wrap"
+        justify={{ base: 'center', sm: 'space-between' }}
+      >
         {subjects?.map((subject) => (
           <Box
             w="19.1rem"

@@ -1,15 +1,18 @@
-import { Box, Container, Heading } from '@chakra-ui/react';
+import { Box, Container, Heading, Image } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 import { Section, SubjectGrid } from '../components/dashboard';
 import { CONTAINER_MAX_WIDTH } from '../constants/layout';
 import { SubjectsContext } from '../context';
 
+import hand from '../assets/patterns/hand.svg';
+
 export const Dashboard = (): React.ReactElement => {
   const { data } = useContext(SubjectsContext);
 
   return (
-    <Box w="100%" pt="5.3rem">
-      <Container maxW={CONTAINER_MAX_WIDTH}>
+    <Box w="100%" mt="12.8rem" mb="5.3rem" overflowX="hidden">
+      <Image alt="hand" src={hand} pos="fixed" top="0" left="0" zIndex="1" />
+      <Container maxW={CONTAINER_MAX_WIDTH} pos="relative" zIndex="3">
         <Heading
           as="h1"
           fontWeight="normal"

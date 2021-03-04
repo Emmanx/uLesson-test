@@ -1,9 +1,7 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Image, Text } from '@chakra-ui/react';
 import React from 'react';
 
-import poster from '../../assets/images/video.png';
-
-const PlayIcon = () => {
+const PlayIcon = ({ color }: { color: string }) => {
   return (
     <Box pos="relative">
       <svg
@@ -38,7 +36,7 @@ const PlayIcon = () => {
       >
         <path
           d="M0.207326 11.0038C0.198081 12.6129 1.94637 13.6181 3.33229 12.8005L10.793 8.39943C12.1453 7.60173 12.1538 5.64848 10.8085 4.83908L3.39862 0.381017C2.02207 -0.447171 0.267458 0.538238 0.258228 2.14469L0.207326 11.0038Z"
-          fill="#EA7052"
+          fill={color}
         />
       </svg>
     </Box>
@@ -47,25 +45,50 @@ const PlayIcon = () => {
 
 type VideoCardProps = {
   color: string;
+  title: string;
+  subject: string;
+  poster: string;
 };
 
-export const VideoCard = ({ color }: VideoCardProps): React.ReactElement => {
+export const VideoCard = ({
+  color,
+  title,
+  subject,
+  poster,
+}: VideoCardProps): React.ReactElement => {
   return (
-    <Box>
+    <Box
+      w="calc(25% - 2rem)"
+      minW="226px"
+      mr={{ base: '0', sm: '2rem' }}
+      mt="4rem"
+      flexGrow={{ base: 1, sm: 0 }}
+    >
       <Flex
-        w="236px"
+        w="100%"
         h="15.8rem"
         borderRadius="18px"
         justify="center"
         align="center"
-        bg={`linear-gradient(90deg, rgba(234,112,82,0.2) 50%, rgba(234,112,82,0.2) 100%), url(${poster})`}
-        bgSize="cover"
-        bgRepeat="no-repeat"
+        bg={`linear-gradient(90deg, ${color} 50%, ${color} 100%)`}
+        pos="relative"
       >
-        <PlayIcon />
+        <Image
+          borderRadius="18px"
+          pos="absolute"
+          top="0"
+          left="0"
+          w="100%"
+          h="100%"
+          opacity=".8"
+          alt="video poster"
+          objectFit="cover"
+          src={poster}
+        />
+        <PlayIcon color={color} />
       </Flex>
       <Text mt="1.5rem" color={color}>
-        Subject
+        {subject}
       </Text>
       <Text
         maxWidth="95%"
@@ -74,7 +97,7 @@ export const VideoCard = ({ color }: VideoCardProps): React.ReactElement => {
         color="#313848"
         fontSize="2.2rem"
       >
-        Understanding motion
+        {title}
       </Text>
     </Box>
   );
