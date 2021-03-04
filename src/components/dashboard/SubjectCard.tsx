@@ -62,7 +62,7 @@ export const SubjectCard = ({
   return (
     <Box
       h="10.2rem"
-      w="19.763rem"
+      w="100%"
       bg={cardStyles[subject.name].color}
       borderRadius="16.575px"
       pos="relative"

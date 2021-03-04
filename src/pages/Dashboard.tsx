@@ -13,13 +13,12 @@ export const Dashboard = (): React.ReactElement => {
         <Heading
           as="h1"
           fontWeight="normal"
-          fontSize="4.8rem"
+          fontSize={{ base: '4rem', md: '4.8rem' }}
           fontFamily="'Itim', cursive"
         >
           Hello Hassan,
         </Heading>
-        {/* @ts-ignore */}
-        <SubjectGrid subjects={data.subjects} />
+        <SubjectGrid subjects={data?.subjects} />
         <Section />
       </Container>
     </Box>

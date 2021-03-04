@@ -1,3 +1,4 @@
+import { Flex, Spinner, Text } from '@chakra-ui/react';
 import React from 'react';
 import { useQuery } from 'react-query';
 import { fetchSubjects } from '../queries';
@@ -23,6 +24,22 @@ const SubjectsContextProvider = ({
     'subjects',
     fetchSubjects
   );
+
+  if (isLoading) {
+    return (
+      <Flex justify="center" align="center" w="100%" h="100vh">
+        <Spinner color="#EA7052" size="xl" />
+      </Flex>
+    );
+  }
+
+  if (!data) {
+    return (
+      <Flex justify="center" align="center" w="100%" h="100vh">
+        <Text fontSize="3rem">No Data</Text>
+      </Flex>
+    );
+  }
 
   return (
     <SubjectsContext.Provider value={{ data, isLoading, isError, error }}>

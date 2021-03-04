@@ -26,7 +26,7 @@ export const Chapters = (): React.ReactElement => {
   };
 
   return (
-    <Box w="100%" mt="5.3rem">
+    <Box w="100%" my="5.3rem">
       <Container maxW={CONTAINER_MAX_WIDTH}>
         <HStack pos="relative" left="-11rem" spacing="3.8rem">
           <Image
