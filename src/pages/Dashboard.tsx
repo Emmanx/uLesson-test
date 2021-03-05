@@ -26,7 +26,7 @@ export const Dashboard = (): React.ReactElement => {
         <Section />
       </Container>
       <Image
-        alt="hand"
+        alt="circle"
         src={whiteCircle}
         pos="fixed"
         bottom="0"

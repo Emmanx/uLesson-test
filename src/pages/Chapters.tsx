@@ -4,13 +4,15 @@ import { useHistory, useParams } from 'react-router-dom';
 import { CONTAINER_MAX_WIDTH } from '../constants/layout';
 
 import arrow from '../assets/icons/arrow.svg';
+import math from '../assets/patterns/math.svg';
+
 import { SubjectsContext } from '../context';
 import { ISubject } from '../types';
 import { ChapterSection } from '../components/chapters';
 
 export const Chapters = (): React.ReactElement => {
   const history = useHistory();
-  const { id } = useParams();
+  const { id } = useParams<any>();
   const [subject, setSubjects] = useState<ISubject | null>();
   const { data } = useContext(SubjectsContext);
 
@@ -27,6 +29,14 @@ export const Chapters = (): React.ReactElement => {
 
   return (
     <Box w="100%" mt="12.8rem" mb="5.3rem">
+      <Image
+        alt="math"
+        src={math}
+        pos="fixed"
+        top="10rem"
+        right="10rem"
+        zIndex="1"
+      />
       <Container maxW={CONTAINER_MAX_WIDTH}>
         <HStack
           pos="relative"

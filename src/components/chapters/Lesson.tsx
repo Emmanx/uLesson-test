@@ -1,5 +1,6 @@
 import { Box, Flex, Image, Text } from '@chakra-ui/react';
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { ILesson } from '../../types';
 import { truncate } from '../../utils';
 
@@ -8,6 +9,14 @@ interface ILessonProps {
 }
 
 export const Lesson = ({ lesson }: ILessonProps): React.ReactElement => {
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push(
+      `/subject/${lesson.subject_id}/chapter/${lesson.chapter_id}/lesson/${lesson.id}`
+    );
+  };
+
   return (
     <Flex
       flexDir="column"
@@ -20,6 +29,8 @@ export const Lesson = ({ lesson }: ILessonProps): React.ReactElement => {
       bg="#fff"
       textAlign="center"
       pos="relative"
+      cursor="pointer"
+      onClick={handleClick}
     >
       <Image
         w="10rem"
